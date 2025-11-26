@@ -79,7 +79,7 @@
     <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
+                <!-- Logo Pequena (Navbar) -->
                 <div class="flex items-center gap-2">
                     <img src="https://cdn.prod.website-files.com/68c9b59ad35a897b62c3262c/68c9baa2c06920a9e64b5588_logoarborizacolor.png" alt="Logo Arboriza" class="h-10 w-auto">
                     <span class="font-logo text-2xl text-[#2E7D32]">Arboriza</span>
@@ -94,9 +94,16 @@
 
     <!-- 2. HERO SECTION (Apresentação) -->
     <section class="hero-bg pt-32 pb-20 px-4 flex-grow flex flex-col justify-center">
-        <div class="max-w-4xl mx-auto text-center space-y-8">
+        <div class="max-w-4xl mx-auto text-center space-y-6">
             
-            <!-- Slogan -->
+            <!-- LOGO GRANDE (Em destaque no topo) -->
+            <div class="flex justify-center mb-2">
+                 <img src="https://cdn.prod.website-files.com/68c9b59ad35a897b62c3262c/68c9baa2c06920a9e64b5588_logoarborizacolor.png" 
+                      alt="Logo Grande Arboriza" 
+                      class="w-48 md:w-64 h-auto object-contain drop-shadow-lg">
+            </div>
+
+            <!-- Slogan e Título -->
             <div>
                 <p class="text-xl md:text-2xl text-gray-600 mb-2">Tá perdido? Abraça uma árvore e...</p>
                 <h1 class="font-logo text-6xl md:text-8xl text-[#2E7D32] leading-tight mb-4">
@@ -272,7 +279,7 @@
                 }, 100);
             });
 
-            // Intersection Observer para animação ao rolar (caso o usuário role manualmente)
+            // Intersection Observer para animação ao rolar
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
