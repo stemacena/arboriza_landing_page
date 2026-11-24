@@ -1,0 +1,531 @@
+/* ==========================================================================
+   ARBORIZA LANDING PAGE v2.0 — FRUTIGER AERO (Windows/Linux 2000s + WCAG)
+   ========================================================================== */
+
+:root {
+    --verde-principal: #18981D;
+    --verde-escuro: #0F6315;
+    --verde-claro: #6CE53A;
+    --azul-ceu: #1C96E8;
+    --azul-aero: #0078D7;
+    --azul-profundo: #0B4F8A;
+    --aqua-brilho: #24D2D6;
+    --aero-deep: #0E2F23; /* Alto contraste WCAG AA+ */
+    --branco: #FFFFFF;
+
+    font-family: "Segoe UI", "Lucida Grande", "Tahoma", "Nunito", system-ui, -apple-system, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--aero-deep);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.font-logo {
+    font-family: "Fredoka", "Segoe UI", "Nunito", sans-serif;
+    letter-spacing: 0.02em;
+}
+.text-aero-deep { color: var(--aero-deep); }
+.text-verde-principal { color: var(--verde-principal); }
+.border-verde-principal { border-color: var(--verde-principal); }
+
+/* Acessibilidade: foco visível para teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #0078D7;
+    outline-offset: 2px;
+}
+
+/* ==================== NAVBAR AERO GLASS ==================== */
+.aero-navbar {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(227, 245, 255, 0.9) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 16px rgba(11, 79, 138, 0.12);
+}
+
+.aero-nav-link {
+    padding: 6px 12px;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+}
+.aero-nav-link:hover {
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--verde-principal);
+    box-shadow: 0 2px 8px rgba(11, 79, 138, 0.12);
+}
+
+.aero-icon-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #FFFFFF 0%, #DFF2FC 100%);
+    border: 1.5px solid #FFFFFF;
+    box-shadow: 0 3px 10px rgba(11, 79, 138, 0.16);
+    color: var(--aero-deep);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* ==================== HERO SECTION ==================== */
+.landing-hero {
+    background-color: #2185D5;
+    background-image:
+        url("assets/fundo-inicial.jpg"),
+        linear-gradient(180deg, #0D5EBF 0%, #58B8F4 42%, #D7F2FD 66%, #7AD12B 86%, #399E18 100%);
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+.hero-slogan-img {
+    max-width: 90%;
+    max-height: 82px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(0, 35, 90, 0.4));
+}
+
+.hero-logo-free {
+    width: 240px;
+    max-width: 72vw;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 22px rgba(0, 55, 95, 0.28));
+    animation: floatGentle 5.5s ease-in-out infinite;
+}
+
+.hero-wordmark-free {
+    width: 88%;
+    max-width: 390px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 12px rgba(255, 255, 255, 0.95));
+}
+
+.aero-pill-highlight {
+    background: rgba(255, 255, 255, 0.84);
+    backdrop-filter: blur(6px);
+    border: 1.5px solid rgba(255, 255, 255, 0.95);
+    border-radius: 9999px;
+    box-shadow: 0 4px 16px rgba(11, 79, 138, 0.14);
+}
+
+.hero-cta-dock {
+    background: rgba(255, 255, 255, 0.38);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1.5px solid rgba(255, 255, 255, 0.65);
+    border-radius: 26px;
+    padding: 14px;
+    box-shadow: 0 8px 26px rgba(10, 65, 20, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+.aero-arvoreco-banner {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(235, 249, 255, 0.92) 100%);
+    border: 1.5px solid #FFFFFF;
+    border-radius: 22px;
+    padding: 10px 18px;
+    box-shadow: 0 8px 22px rgba(11, 79, 138, 0.18);
+}
+
+/* Elementos Decorativos do Hero */
+.hero-leaf-right {
+    position: absolute;
+    top: 18%;
+    right: -12px;
+    width: 175px;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    z-index: 2;
+    filter: drop-shadow(0 8px 14px rgba(0, 50, 20, 0.24));
+}
+
+.hero-bubble {
+    position: absolute;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    z-index: 2;
+    animation: floatBubble 7.5s ease-in-out infinite;
+}
+.hb-1 { width: 64px; top: 13%; right: 12%; opacity: 0.9; animation-delay: 0s; }
+.hb-2 { width: 34px; top: 20%; right: 24%; opacity: 0.82; animation-delay: 1.4s; }
+.hb-3 { width: 78px; top: 38%; left: 5%; opacity: 0.92; animation-delay: 0.9s; }
+.hb-4 { width: 42px; top: 26%; left: 16%; opacity: 0.8; animation-delay: 2.2s; }
+.hb-5 { width: 54px; bottom: 20%; right: 7%; opacity: 0.86; animation-delay: 1.8s; }
+
+/* ==================== SEÇÕES & JANELAS AERO ==================== */
+.aero-section-light {
+    background:
+        radial-gradient(circle at 92% 8%, rgba(94, 192, 247, 0.18) 0%, transparent 40%),
+        radial-gradient(circle at 8% 92%, rgba(108, 229, 58, 0.16) 0%, transparent 42%),
+        linear-gradient(180deg, #F4FBFF 0%, #FFFFFF 55%, #F0FBF2 100%);
+}
+
+.aero-section-sky {
+    background:
+        radial-gradient(circle at 12% 15%, rgba(255, 255, 255, 0.7) 0%, transparent 38%),
+        linear-gradient(180deg, #DFF4FF 0%, #ECF9F0 100%);
+}
+
+.aero-window {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1.5px solid rgba(255, 255, 255, 0.95);
+    box-shadow:
+        0 10px 28px rgba(11, 79, 138, 0.14),
+        0 0 0 1px rgba(24, 152, 29, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.aero-titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 14px;
+    color: #FFFFFF;
+    text-shadow: 0 1px 2px rgba(0, 45, 10, 0.7);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.12) 48%, rgba(0, 0, 0, 0.06) 52%, rgba(255, 255, 255, 0.08) 100%),
+        linear-gradient(90deg, #168A1C 0%, #32B82A 65%, #168E68 100%);
+    border-bottom: 1px solid rgba(15, 99, 21, 0.35);
+}
+
+.aero-titlebar-blue {
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.12) 48%, rgba(0, 0, 0, 0.06) 52%, rgba(255, 255, 255, 0.08) 100%),
+        linear-gradient(90deg, #0B69C2 0%, #1C96E8 65%, #18B4C7 100%);
+    border-bottom: 1px solid rgba(11, 79, 138, 0.4);
+}
+
+.aero-win-controls {
+    display: flex;
+    gap: 4px;
+}
+.aero-win-controls span {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background: linear-gradient(180deg, #F6FAFD 0%, #D2E4F0 100%);
+    color: #1A3A2E;
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 16px;
+    text-align: center;
+    border: 1px solid rgba(11, 79, 138, 0.35);
+    text-shadow: none;
+    box-shadow: inset 0 1px 0 #FFFFFF;
+}
+
+.aero-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(242, 250, 255, 0.94) 100%);
+    border: 1px solid rgba(135, 200, 235, 0.6);
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(11, 79, 138, 0.08), inset 0 1px 0 #FFFFFF;
+}
+
+.aero-badge-pill {
+    background: linear-gradient(180deg, #FFFFFF 0%, #E0F6EA 100%);
+    color: #0F5C17;
+    border: 1px solid #8ADCA0;
+    border-radius: 9999px;
+    box-shadow: 0 2px 6px rgba(15, 92, 23, 0.1), inset 0 1px 0 #FFFFFF;
+}
+
+.aero-feature-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0F6315;
+    background: linear-gradient(180deg, #E8FCEB 0%, #B8F2C2 100%);
+    border: 1.5px solid #7AE08B;
+    box-shadow: 0 4px 10px rgba(24, 152, 29, 0.16), inset 0 1px 0 #FFFFFF;
+}
+
+.aero-feature-icon-blue {
+    color: #0B4F8A;
+    background: linear-gradient(180deg, #E6F6FF 0%, #B8E4FF 100%);
+    border-color: #7CC8F8;
+    box-shadow: 0 4px 10px rgba(0, 120, 215, 0.16), inset 0 1px 0 #FFFFFF;
+}
+
+/* ==================== DASHBOARD KPIs & BARS ==================== */
+.live-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #16A34A;
+    margin-right: 5px;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.25);
+    animation: pulseLive 1.8s infinite;
+}
+
+@keyframes pulseLive {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.25); opacity: 0.7; }
+}
+
+.aero-kpi-card {
+    background: linear-gradient(180deg, #FFFFFF 0%, #EEF8FF 100%);
+    border: 1.5px solid #B7DDF2;
+    border-radius: 16px;
+    padding: 14px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(11, 79, 138, 0.08), inset 0 1px 0 #FFFFFF;
+}
+.aero-kpi-card.kpi-green {
+    background: linear-gradient(180deg, #FFFFFF 0%, #E7FBEB 100%);
+    border-color: #86E39A;
+}
+.aero-kpi-card.kpi-blue {
+    background: linear-gradient(180deg, #FFFFFF 0%, #E3F4FF 100%);
+    border-color: #7DD3FC;
+}
+.kpi-value {
+    font-size: 1.65rem;
+    font-weight: 900;
+    color: var(--aero-deep);
+    line-height: 1.15;
+    margin-top: 4px;
+}
+.kpi-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #475569;
+    margin-top: 2px;
+}
+
+.aero-tab-btn {
+    padding: 8px 16px;
+    border-radius: 9999px;
+    font-weight: 800;
+    font-size: 0.82rem;
+    color: var(--aero-deep);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.aero-tab-btn.aero-tab-active {
+    background: linear-gradient(180deg, #32B82E 0%, #168A1B 100%);
+    color: #FFFFFF;
+    box-shadow: 0 3px 8px rgba(24, 152, 29, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.65);
+    text-shadow: 0 1px 2px rgba(0, 45, 10, 0.6);
+}
+
+.map-filter-chip {
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    border: 1px solid #B7DDF2;
+    background: #FFFFFF;
+    color: var(--aero-deep);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.map-filter-chip.active {
+    background: linear-gradient(180deg, #1C96E8 0%, #0B69C2 100%);
+    color: #FFFFFF;
+    border-color: #0B69C2;
+}
+
+.aero-progress-track {
+    width: 100%;
+    height: 13px;
+    background: linear-gradient(180deg, #D2E6F2 0%, #EAF5FB 100%);
+    border-radius: 9999px;
+    border: 1px solid #9EC5DE;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 40, 70, 0.14);
+}
+.aero-progress-fill {
+    height: 100%;
+    border-radius: 9999px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.12) 48%, rgba(0, 0, 0, 0.06) 52%, rgba(255, 255, 255, 0.18) 100%),
+        linear-gradient(90deg, #27C42C 0%, #6CE53A 55%, #18B4C7 100%);
+    transition: width 0.5s ease-out;
+}
+.aero-progress-fill.bar-warning {
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(0, 0, 0, 0.06) 52%),
+        linear-gradient(90deg, #D97706 0%, #FACC15 100%);
+}
+.aero-progress-fill.bar-critical {
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(0, 0, 0, 0.06) 52%),
+        linear-gradient(90deg, #B91C1C 0%, #F87171 100%);
+}
+
+.aero-input {
+    background: linear-gradient(180deg, #F4FAFE 0%, #FFFFFF 100%);
+    border: 1.5px solid #9CCBE8;
+    border-radius: 10px;
+    padding: 10px 12px;
+    color: var(--aero-deep);
+    font-weight: 600;
+    box-shadow: inset 0 2px 4px rgba(11, 79, 138, 0.08);
+}
+
+/* ==================== AUTHENTIC FRUTIGER AERO BUTTON ==================== */
+.frutiger-aero-button {
+    --hue: 140;
+    --sat: 0.28;
+    --glow-intensity: 0.65;
+
+    --fg: #FFFFFF;
+    --bg: oklch(64% var(--sat) var(--hue) / 0.92);
+    --bg-dark: oklch(44% var(--sat) var(--hue) / 0.96);
+    --bottom-glow: radial-gradient(
+        farthest-corner at bottom center,
+        rgba(255, 255, 255, var(--glow-intensity)),
+        transparent
+    );
+
+    background-color: var(--verde-principal);
+    background:
+        var(--bottom-glow),
+        linear-gradient(to bottom, var(--bg-dark), var(--bg));
+
+    border: 1.5px solid rgba(255, 255, 255, 0.88);
+    border-radius: 9999px;
+    box-shadow: 0 4px 10px rgba(0, 45, 20, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.85);
+
+    color: var(--fg);
+    font-family: "Segoe UI", "Lucida Grande", "Lucida Sans Unicode", system-ui, sans-serif;
+    font-weight: 800;
+    text-shadow: 0 1px 3px rgba(0, 35, 10, 0.72);
+    text-decoration: none;
+
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 240ms ease;
+    user-select: none;
+    -webkit-user-select: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.frutiger-aero-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.35) 45%,
+        rgba(255, 255, 255, 0.05) 55%,
+        transparent 70%
+    );
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.frutiger-aero-button::after {
+    content: "";
+    position: absolute;
+    top: 4%;
+    left: 0.75em;
+    width: calc(100% - 1.5em);
+    height: 40%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.08));
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.frutiger-aero-button:hover,
+.frutiger-aero-button:focus {
+    box-shadow: 0 6px 14px rgba(0, 50, 25, 0.38);
+    transform: translateY(-1px);
+    filter: brightness(1.04);
+}
+.frutiger-aero-button:active {
+    transform: translateY(1px);
+}
+
+.frutiger-aero-button.aero-green { --hue: 142; --sat: 0.26; background-color: #18981D; }
+.frutiger-aero-button.aero-blue  { --hue: 238; --sat: 0.21; background-color: #0078D7; text-shadow: 0 1px 3px rgba(0, 25, 65, 0.75); }
+.frutiger-aero-button.aero-amber { --hue: 68;  --sat: 0.20; background-color: #D97706; text-shadow: 0 1px 3px rgba(70, 30, 0, 0.78); }
+
+.frutiger-aero-button.small  { padding: 0.5em 1.25em; font-size: 0.85rem; }
+.frutiger-aero-button.medium { padding: 0.75em 1.75em; font-size: 0.96rem; }
+.frutiger-aero-button.large  { padding: 0.95em 2.1em; font-size: 1.06rem; }
+
+/* ==================== FOOTER & TOAST ==================== */
+.aero-footer {
+    background: linear-gradient(180deg, #0D3A54 0%, #0A2736 100%);
+    border-top: 2px solid rgba(108, 229, 232, 0.45);
+}
+
+.aero-toast {
+    background: linear-gradient(180deg, rgba(14, 54, 42, 0.97), rgba(9, 38, 52, 0.97));
+    color: #FFFFFF;
+    border: 1.5px solid rgba(108, 229, 232, 0.75);
+}
+
+/* ==================== ANIMAÇÕES & RESPONSIVIDADE ==================== */
+.arvoreco-float { animation: floatGentle 4s ease-in-out infinite; }
+
+@keyframes floatGentle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+@keyframes floatBubble {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-10px) scale(1.04); }
+}
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+@media (max-width: 768px) {
+    .hero-leaf-right { width: 118px; top: 21%; }
+    .hero-logo-free { width: 205px; }
+    .hb-1 { width: 46px; right: 6%; }
+    .hb-3 { width: 52px; left: 2%; }
+    .hb-4, .hb-5 { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-logo-free,
+    .hero-bubble,
+    .arvoreco-float,
+    .live-dot {
+        animation: none !important;
+    }
+    .fade-in-section {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
